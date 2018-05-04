@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0C70F84-717F-46B4-A7EC-2636A053CCBB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestEFCodeFirstRelation</RootNamespace>
+    <AssemblyName>TestEFCodeFirstRelation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C1Migration\201805040107306_OneToMany.cs" />
+    <Compile Include="C1Migration\201805040107306_OneToMany.Designer.cs">
+      <DependentUpon>201805040107306_OneToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C1Migration\Configuration.cs" />
+    <Compile Include="C2Migration\201805040111417_C2.cs" />
+    <Compile Include="C2Migration\201805040111417_C2.Designer.cs">
+      <DependentUpon>201805040111417_C2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C2Migration\Configuration.cs" />
+    <Compile Include="C3Migration\201805040145015_C3.cs" />
+    <Compile Include="C3Migration\201805040145015_C3.Designer.cs">
+      <DependentUpon>201805040145015_C3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C3Migration\Configuration.cs" />
+    <Compile Include="OneToMany\Convention3\C3DataContext.cs" />
+    <Compile Include="OneToMany\Convention3\C3Grade.cs" />
+    <Compile Include="OneToMany\Convention3\C3Student.cs" />
+    <Compile Include="OneToMany\Convention2\C2DataContext.cs" />
+    <Compile Include="OneToMany\Convention2\C2Grade.cs" />
+    <Compile Include="OneToMany\Convention2\C2Student.cs" />
+    <Compile Include="OneToMany\Convention1\C1DataContext.cs" />
+    <Compile Include="OneToMany\Convention1\C1Grade.cs" />
+    <Compile Include="OneToMany\Convention1\C1Student.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="C1Migration\201805040107306_OneToMany.resx">
+      <DependentUpon>201805040107306_OneToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C2Migration\201805040111417_C2.resx">
+      <DependentUpon>201805040111417_C2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C3Migration\201805040145015_C3.resx">
+      <DependentUpon>201805040145015_C3.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
