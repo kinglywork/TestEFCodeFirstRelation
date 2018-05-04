@@ -63,6 +63,18 @@
       <DependentUpon>201805040145015_C3.cs</DependentUpon>
     </Compile>
     <Compile Include="C3Migration\Configuration.cs" />
+    <Compile Include="C4Migration\201805040633252_C4.cs" />
+    <Compile Include="C4Migration\201805040633252_C4.Designer.cs">
+      <DependentUpon>201805040633252_C4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C4Migration\201805040635341_C4-1.cs" />
+    <Compile Include="C4Migration\201805040635341_C4-1.Designer.cs">
+      <DependentUpon>201805040635341_C4-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C4Migration\Configuration.cs" />
+    <Compile Include="OneToMany\Convention4\C4DataContext.cs" />
+    <Compile Include="OneToMany\Convention4\C4Grade.cs" />
+    <Compile Include="OneToMany\Convention4\C4Student.cs" />
     <Compile Include="OneToMany\Convention3\C3DataContext.cs" />
     <Compile Include="OneToMany\Convention3\C3Grade.cs" />
     <Compile Include="OneToMany\Convention3\C3Student.cs" />
@@ -88,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C3Migration\201805040145015_C3.resx">
       <DependentUpon>201805040145015_C3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C4Migration\201805040633252_C4.resx">
+      <DependentUpon>201805040633252_C4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C4Migration\201805040635341_C4-1.resx">
+      <DependentUpon>201805040635341_C4-1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
